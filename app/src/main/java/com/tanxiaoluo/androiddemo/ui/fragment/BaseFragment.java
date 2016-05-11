@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.orhanobut.logger.Logger;
 import com.tanxiaoluo.androiddemo.annotation.Layout;
 
 import butterknife.BindView;
@@ -31,8 +32,9 @@ public class BaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (rootView == null) {
             layoutId = Layout.LayoutResolver.resolver(this.getClass(), BaseFragment.class, -1);
-            if ( -1 == layoutId ) {
+            if (-1 == layoutId) {
                 // TODO 抛出异常
+                Logger.e("please use BaseFragment subClass");
             }
             rootView = inflater.inflate(layoutId, container, false);
         }
