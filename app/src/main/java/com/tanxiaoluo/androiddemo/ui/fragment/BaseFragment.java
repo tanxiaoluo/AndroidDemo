@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.tanxiaoluo.androiddemo.annotation.Layout;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -24,22 +26,18 @@ public class BaseFragment extends Fragment {
         return new BaseFragment();
     }
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (rootView == null) {
+            layoutId = Layout.LayoutResolver.resolver(this.getClass(), BaseFragment.class, -1);
+            if ( -1 == layoutId ) {
+                // TODO 抛出异常
+            }
             rootView = inflater.inflate(layoutId, container, false);
         }
         ButterKnife.bind(this, rootView);
         return rootView;
     }
 
-    public int getLayoutId() {
-        return layoutId;
-    }
-
-    public void setLayoutId(int layoutId) {
-        this.layoutId = layoutId;
-    }
 }
