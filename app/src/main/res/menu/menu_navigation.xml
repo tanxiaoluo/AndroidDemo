@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/menu_navigation_setting"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/item_navigition_material"
+            android:icon="@drawable/ic_material"
+            android:title="@string/material_design" />
+    </group>
+</menu>
