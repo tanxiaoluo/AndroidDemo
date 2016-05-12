@@ -2,4 +2,7 @@
     <string name="app_name">Android Demo</string>
     <string name="material_design">Material Design</string>
     <string name="fragment_material_button_content_one">AppBarLayout+CollapsingToolbarLayout+TabLayout</string>
+
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
 </resources>
